@@ -11,19 +11,36 @@
   <h1>Scientific Calculator</h1>
   <h2>A simple project built with vanilla JavaScript</h2>
   <div class="calculator">
-    <div id="screen" class="screen">
+    <div class="screen">
+      <div class="inputDisplay">
 
+      </div>
+      <div class="outputDisplay">
+
+      </div>
     </div>
     <div class="inputs">
-      <button id="one">1</button>
-      <button id="two">2</button>
-      <button id="three">3</button>
-      <button id="four">4</button>
-      <button id="five">5</button>
-      <button id="six">6</button>
-      <button id="seven">7</button>
-      <button id="eight">8</button>
-      <button id="nine">9</button>
+      <div class="numbers">
+        <button value="1" class="input">1</button>
+        <button value="2" class="input">2</button>
+        <button value="3" class="input">3</button>
+        <button value="4" class="input">4</button>
+        <button value="5" class="input">5</button>
+        <button value="6" class="input">6</button>
+        <button value="7" class="input">7</button>
+        <button value="8" class="input">8</button>
+        <button value="9" class="input">9</button>
+      </div>
+      <div class="operators">
+        <button value="+" class="input">+</button>
+        <button value="-" class="input">-</button>
+        <button value="*" class="input">*</button>
+        <button value="/" class="input">/</button>
+      </div>
+      <button class="reset">CE</button>
+      <button class="ans">ans</button>
+      <button value="=" class="equal">=</button>
+      
     </div>
   </div>
   <script src="js/main.js"></script>
