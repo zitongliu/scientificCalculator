@@ -29,9 +29,9 @@ function mapOperatorStringToFunction(operator) {
 }
 
 var calculator = {
-  inputs: [3, 2, 3],
-  output: [],
-  requiredOperations: ['-','+'],
+  inputs: [], // array of inputs
+  output: [], // array of outputs
+  requiredOperations: [], // array of math operator in string format (length of this array must be this.inputs.length - 1)
   calculate: function() {
     var total = this.inputs[0];
 

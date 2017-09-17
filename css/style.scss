@@ -1,3 +1,31 @@
+
+$color-blue-light: #3498db;
+$color-white: #fff;
+
+$color-primary: $color-blue-light;
+$color-background: $color-blue-light;
+
+
 body {
-  background-color: ghostwhite;
+  background-color: $color-background;
+  color: $color-white;
+}
+
+.calculator {
+  .screen {
+    width: 300px;
+    height: 60px;
+    border: 1px solid $color-white;
+    margin: 10px 0;
+  }
+  .inputs {
+    button {
+      color: $color-white;
+      width: 80px;
+      height: 80px;
+      border-radius: 10%;
+      border: 1px solid $color-white;
+      background-color: transparent;
+    }
+  }
 }
