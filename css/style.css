@@ -39,21 +39,40 @@ body {
     border-radius: 50%; }
   .calculator .phone-power-button {
     position: absolute;
+    border-left: 2px solid #6D6E70;
     top: 20%;
     right: -5px;
     width: 5px;
     height: 40px;
     background-color: #fff; }
   .calculator .screen {
+    position: relative;
     height: 100%;
     border: 3px solid #000;
     background-color: #fff; }
+    .calculator .screen .phone-info-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 10px;
+      width: 100%;
+      color: #EBEDEC;
+      font-size: 11px;
+      display: flex; }
+      .calculator .screen .phone-info-bar .info-network,
+      .calculator .screen .phone-info-bar .info-time,
+      .calculator .screen .phone-info-bar .info-battery {
+        flex: 1; }
+      .calculator .screen .phone-info-bar .info-time {
+        text-align: center; }
+      .calculator .screen .phone-info-bar .info-battery {
+        text-align: right; }
     .calculator .screen .inputDisplay,
     .calculator .screen .outputDisplay {
       background-color: #202020; }
     .calculator .screen .inputDisplay {
-      font-size: 26px;
-      padding: 10px 20px 0 20px;
+      font-size: 24px;
+      padding: 14px 20px 0 20px;
       height: 36px; }
     .calculator .screen .outputDisplay {
       height: 66px;
@@ -67,19 +86,27 @@ body {
   .calculator .row5 {
     width: 100%;
     height: 55px;
-    display: flex; }
+    display: flex;
+    flex-direction: row; }
     .calculator .row1 button,
     .calculator .row2 button,
     .calculator .row3 button,
     .calculator .row4 button,
     .calculator .row5 button {
-      width: 33.33%;
       font-family: monospace;
       font-size: 18px;
       font-weight: 100;
       background-color: #D2D3D7;
-      flex: 1 0px;
-      border: 1px solid #6D6E70; }
+      flex: 1;
+      border: none;
+      border-left: 1px solid #6D6E70;
+      border-bottom: 1px solid #6D6E70; }
+      .calculator .row1 button:active,
+      .calculator .row2 button:active,
+      .calculator .row3 button:active,
+      .calculator .row4 button:active,
+      .calculator .row5 button:active {
+        background-color: #b7b9bf; }
       .calculator .row1 button:last-child,
       .calculator .row2 button:last-child,
       .calculator .row3 button:last-child,
@@ -87,8 +114,14 @@ body {
       .calculator .row5 button:last-child {
         color: white;
         background-color: #FA8E12; }
+        .calculator .row1 button:last-child:active,
+        .calculator .row2 button:last-child:active,
+        .calculator .row3 button:last-child:active,
+        .calculator .row4 button:last-child:active,
+        .calculator .row5 button:last-child:active {
+          background-color: #d57404; }
   .calculator .row5 button:first-child {
-    flex: 2 13%; }
+    flex: 2 12%; }
   .calculator .phone-button {
     width: 42px;
     height: 42px;
