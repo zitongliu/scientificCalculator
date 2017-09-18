@@ -37,10 +37,12 @@ var calculator = {
   calculate: function() {
 
     var inputString = this.inputDisplay;
-    var patternOnlyOperators = new RegExp(/[\+-\/*]/g);
-    var patternNotOperators = new RegExp(/[^\+-\/*]/g);
+    var patternOnlyOperators = new RegExp(/[\/\*\+\/]/g);
+    var patternNotOperators = new RegExp(/[^\/\*\+\/]/g);
 
     this.inputs = inputString.split(patternOnlyOperators);
+
+    debugger;
 
 
     // convert array of strings to array of numbers
@@ -50,7 +52,7 @@ var calculator = {
 
 
     this.requiredOperations = inputString.replace(patternNotOperators, '').split('');
-    // debugger
+
     // Solve order of precedence by:
     // 1. scan through the operators array
     // 2. when it detects a higher precedence operator, do the calculation and put the result back into the inputs array
