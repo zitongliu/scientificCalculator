@@ -42,9 +42,6 @@ var calculator = {
 
     this.inputs = inputString.split(patternOnlyOperators);
 
-    debugger;
-
-
     // convert array of strings to array of numbers
     for (var i = 0; i < this.inputs.length; i++) {
       this.inputs[i] = parseFloat(this.inputs[i], 10);
