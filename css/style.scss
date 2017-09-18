@@ -63,12 +63,16 @@ body {
 
   .phone-power-button {
     position: absolute;
-    border-left: 2px solid $color-grey-light;
+    border: 2px solid $color-grey-light;
     top: 20%;
-    right: -5px;
-    width: 5px;
+    right: -7px;
+    width: 7px;
     height: 40px;
     background-color: $color-white;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .screen {
@@ -77,15 +81,16 @@ body {
     border: 3px solid $color-black;
     background-color: $color-white;
 
-    // &.is-power-off {
-    //   background-color: $color-black;
-    //
-    //   .inputDisplay,
-    //   .outputDisplay,
-    //   .inputs {
-    //     display: none;
-    //   }
-    // }
+    &.is-power-off {
+      background-color: $color-black;
+
+      .phone-info-bar,
+      .inputDisplay,
+      .outputDisplay,
+      .inputs {
+        display: none;
+      }
+    }
 
     .phone-info-bar {
       position: absolute;

@@ -39,17 +39,26 @@ body {
     border-radius: 50%; }
   .calculator .phone-power-button {
     position: absolute;
-    border-left: 2px solid #6D6E70;
+    border: 2px solid #6D6E70;
     top: 20%;
-    right: -5px;
-    width: 5px;
+    right: -7px;
+    width: 7px;
     height: 40px;
     background-color: #fff; }
+    .calculator .phone-power-button:hover {
+      cursor: pointer; }
   .calculator .screen {
     position: relative;
     height: 100%;
     border: 3px solid #000;
     background-color: #fff; }
+    .calculator .screen.is-power-off {
+      background-color: #000; }
+      .calculator .screen.is-power-off .phone-info-bar,
+      .calculator .screen.is-power-off .inputDisplay,
+      .calculator .screen.is-power-off .outputDisplay,
+      .calculator .screen.is-power-off .inputs {
+        display: none; }
     .calculator .screen .phone-info-bar {
       position: absolute;
       top: 0;

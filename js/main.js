@@ -91,6 +91,23 @@ var calculator = {
 }
 
 window.onload = function() {
+
+  // power button
+  document.querySelector('#phone-power-button').addEventListener("click", function(){
+    var phoneScreen = document.querySelector('#phone-screen');
+    if (phoneScreen.classList.contains("is-power-off")) {
+      phoneScreen.classList.remove("is-power-off");
+    } else {
+      phoneScreen.classList.add("is-power-off");
+    }
+
+    calculator.resetCalculator();
+    calculator.displayInputs(inputScreen);
+    calculator.displayResult(resultScreen);
+
+  });
+
+
   // Select all input buttons
   var inputButtons = document.querySelectorAll('button.input');
 
