@@ -12,35 +12,35 @@ body {
   border-radius: 38px;
   width: 264px;
   height: 534px;
-  padding: 74px 16px 74px 16px;
+  padding: 50px 16px 54px 16px;
   background-color: #EBEDEC; }
   .calculator .phone-top-dot {
     position: absolute;
-    top: 22px;
-    left: calc(50% - 2px);
-    width: 5px;
-    height: 5px;
+    top: 14px;
+    left: calc(50% - 5px);
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background-color: #6D6E70; }
   .calculator .phone-speaker {
     position: absolute;
-    top: 40px;
-    left: calc(50% - 20px);
-    width: 40px;
+    top: 28px;
+    left: calc(50% - 16px);
+    width: 32px;
     height: 3px;
     background-color: #6D6E70; }
   .calculator .phone-camera {
     position: absolute;
-    top: 37px;
-    left: calc(50% - 45px);
-    width: 8px;
-    height: 8px;
+    top: 24px;
+    left: calc(50% - 36px);
+    width: 10px;
+    height: 10px;
     background-color: #6D6E70;
     border-radius: 50%; }
   .calculator .phone-power-button {
     position: absolute;
     border: 2px solid #6D6E70;
-    top: 20%;
+    top: 23%;
     right: -7px;
     width: 7px;
     height: 40px;
@@ -81,10 +81,10 @@ body {
       background-color: #202020; }
     .calculator .screen .inputDisplay {
       font-size: 24px;
-      padding: 14px 20px 0 20px;
-      height: 36px; }
+      padding: 16px 20px 0 20px;
+      height: 44px; }
     .calculator .screen .outputDisplay {
-      height: 66px;
+      height: 76px;
       padding: 10px 15px;
       text-align: right;
       font-size: 50px; }
@@ -94,7 +94,7 @@ body {
   .calculator .row4,
   .calculator .row5 {
     width: 100%;
-    height: 55px;
+    height: 60px;
     display: flex;
     flex-direction: row; }
     .calculator .row1 button,
@@ -137,7 +137,7 @@ body {
     border-radius: 50%;
     border: 2px solid #6D6E70;
     position: absolute;
-    bottom: 20px;
+    bottom: 5px;
     left: calc(50% - 21px);
     z-index: 1; }
 
