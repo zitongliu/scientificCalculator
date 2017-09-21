@@ -37,8 +37,10 @@ var calculator = {
   calculate: function() {
 
     var inputString = this.inputDisplay;
-    var patternOnlyOperators = new RegExp(/[\/\*\+\/]/g);
-    var patternNotOperators = new RegExp(/[^\/\*\+\/]/g);
+
+    var patternOnlyOperators = new RegExp(/[\-\*\+\/]/g);
+    var startWithMinus =  new RegExp()
+    var patternNotOperators = new RegExp(/[^\-\*\+\/]/g);
 
     this.inputs = inputString.split(patternOnlyOperators);
 
@@ -49,6 +51,12 @@ var calculator = {
 
 
     this.requiredOperations = inputString.replace(patternNotOperators, '').split('');
+
+    // correction for negative first number
+    if (startWithMinus.test(this.inputString)) {
+      this.inputs[0] *= -1;
+      this.requiredOperations.shift();
+    }
 
     // Solve order of precedence by:
     // 1. scan through the operators array
@@ -76,17 +84,23 @@ var calculator = {
 
     this.output.push(total);
   },
-  displayInputs: function(displayNode) {
+  displayInputOnUI: function(displayNode) {
     displayNode.innerHTML = calculator.inputDisplay;
   },
-  displayResult: function(displayNode) {
-    displayNode.innerHTML = this.output[0];
+  displayResultOnUI: function(displayNode) {
+    displayNode.innerHTML = this.output[this.output.length - 1];
+  },
+  resetCalculatorInputs: function() {
+
   },
   resetCalculator: function() {
     this.inputs = [];
     this.output = [];
     this.inputDisplay = '';
     this.outputDisplay = '';
+  },
+  resetDisplayUI: function(displayNode) {
+    displayNode.innerHTML = '';
   }
 }
 
@@ -102,8 +116,8 @@ window.onload = function() {
     }
 
     calculator.resetCalculator();
-    calculator.displayInputs(inputScreen);
-    calculator.displayResult(resultScreen);
+    calculator.resetDisplayUI(inputScreen);
+    calculator.resetDisplayUI(resultScreen);
 
   });
 
@@ -117,7 +131,7 @@ window.onload = function() {
   for (var i = 0; i < inputButtons.length; i++) {
     inputButtons[i].addEventListener("click", function() {
       calculator.inputDisplay = calculator.inputDisplay.concat(this.value);
-      calculator.displayInputs(inputScreen);
+      calculator.displayInputOnUI(inputScreen);
     });
   }
 
@@ -126,20 +140,20 @@ window.onload = function() {
 
   equalButton.addEventListener("click", function() {
     calculator.calculate();
-    calculator.displayResult(resultScreen);
+    calculator.displayResultOnUI(resultScreen);
   });
 
   document.querySelector('.reset').addEventListener("click", function() {
     calculator.resetCalculator();
-    calculator.displayInputs(inputScreen);
-    calculator.displayResult(resultScreen);
+    calculator.resetDisplayUI(inputScreen);
+    calculator.resetDisplayUI(resultScreen);
   });
 
   document.querySelector('.ans').addEventListener("click", function() {
     var previousAnswer = calculator.output[0];
     calculator.resetCalculator();
     calculator.inputDisplay = calculator.inputDisplay.concat(previousAnswer);
-    calculator.displayInputs(inputScreen);
+    calculator.displayInputOnUI(inputScreen);
   });
 
 }
