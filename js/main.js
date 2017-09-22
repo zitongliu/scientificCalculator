@@ -39,23 +39,25 @@ var calculator = {
     var inputString = this.inputDisplay;
 
     var patternOnlyOperators = new RegExp(/[\-\*\+\/]/g);
-    var startWithMinus =  new RegExp()
     var patternNotOperators = new RegExp(/[^\-\*\+\/]/g);
 
+    this.requiredOperations = inputString.replace(patternNotOperators, '').split('');
     this.inputs = inputString.split(patternOnlyOperators);
+
+    // remove erroneous first element caused by a negative first number
+    if (inputString.charAt(0) === '-') {
+      this.inputs.shift();
+      this.requiredOperations.shift();
+    }
 
     // convert array of strings to array of numbers
     for (var i = 0; i < this.inputs.length; i++) {
       this.inputs[i] = parseFloat(this.inputs[i], 10);
     }
 
-
-    this.requiredOperations = inputString.replace(patternNotOperators, '').split('');
-
-    // correction for negative first number
-    if (startWithMinus.test(this.inputString)) {
+    // account for the negative first number
+    if (inputString.charAt(0) === '-') {
       this.inputs[0] *= -1;
-      this.requiredOperations.shift();
     }
 
     // Solve order of precedence by:
@@ -79,6 +81,7 @@ var calculator = {
     var total = this.inputs[0];
     for (var i = 1; i < this.inputs.length; i++) {
       var currentOperationFunction = mapOperatorStringToFunction(this.requiredOperations[i-1]);
+
       total = currentOperationFunction(total, this.inputs[i]);
     }
 
